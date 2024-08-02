@@ -61,13 +61,10 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
               ),
 
               // Close button
-              ElevatedButton(
-                onPressed: () {
-                  dateController.text = pickedDate!.formatToddMMMMyyHHmm();
-                  Navigator.pop(context);
-                },
-                child: const Text('Close'),
-              ),
+              TextButton(onPressed: (){
+                dateController.text = pickedDate!.formatToddMMMMyyHHmm();
+                Navigator.pop(context);
+              }, child: "Save".toTextWidget(style: context.headlineMedium)),
             ],
           ),
         );
@@ -151,7 +148,9 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                         controller: dateController,
                         enabled: false,
                         hintText: AppStrings.selectDueDate,
-                        leadingIcon: Icon(Icons.date_range,),
+                        leadingIcon: Icon(
+                          Icons.date_range,
+                        ),
                       )),
                   context.vGap16,
                   if (Platform.isAndroid)
@@ -204,7 +203,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                       text: AppStrings.addTask,
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
-                          if (_titleController.text != "" && _descriptionController.text != "") {
+                          if (_titleController.text != "") {
                             final task = Task(
                               id: widget.task?.id ?? DateTime.now().toString(),
                               name: _titleController.text,
@@ -220,7 +219,10 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                               isCompleted: false,
                             );
                             if (widget.task == null) {
-                              context.read<TaskBloc>().add(AddTaskEvent(task, isAddToCalendar));
+                              context.read<TaskBloc>().add(AddTaskEvent(
+                                    task,
+                                    isAddToCalendar,
+                                  ));
                             } else {
                               context.read<TaskBloc>().add(UpdateTaskEvent(task));
                             }

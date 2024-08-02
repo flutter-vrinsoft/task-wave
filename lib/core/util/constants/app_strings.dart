@@ -17,7 +17,7 @@ class AppStrings {
   static String dueDate = "Due Date & Time";
   static String spentTime = "Spent time ";
   static String time = "Time";
-  static String goToTask = "Go To Task";
+  static String goToTask = "View All";
   static String createTask = "Create Task";
   static String pleaseEnterYourName = "Please enter your name";
   static String whatsYourName = "What's your name?";
@@ -54,6 +54,8 @@ class AppStrings {
   static String selectDueDate = 'Select Due Date';
   static String enterDescription = 'Enter Description';
   static String enterTitle = 'Enter Title';
+  static String yourTasks = 'Your Tasks';
+  static String trackYourProgress = 'Track Your Progress';
 }
 
 

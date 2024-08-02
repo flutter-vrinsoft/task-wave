@@ -36,10 +36,12 @@ class CustomTextField extends StatelessWidget {
               color: Colors.white, borderRadius: BorderRadius.circular(16), border: Border.all(color: context.primary)),
           child: TextFormField(
             controller: controller,
-            enabled: enabled ?? true,style: TextStyle(
-            color: Colors.black,
-            fontSize: 16.sp,
-          ),
+            enabled: enabled ?? true,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 16.sp,
+            ),
+            textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
                 hintText: hintText ?? '',
                 prefixIcon: leadingIcon ?? null,

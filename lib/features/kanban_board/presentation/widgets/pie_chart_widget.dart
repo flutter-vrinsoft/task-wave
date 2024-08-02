@@ -1,18 +1,18 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boardview/boardview_controller.dart';
-import 'package:flutter_week_view/flutter_week_view.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:size_config/size_config.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:task_wave/core/routes/app_routes.dart';
+import 'package:task_wave/core/theme/app_colors.dart';
 import 'package:task_wave/core/theme/app_sizes.dart';
 import 'package:task_wave/core/theme/app_theme.dart';
 import 'package:task_wave/core/util/constants/app_image.dart';
 import 'package:task_wave/core/util/constants/app_strings.dart';
 import 'package:task_wave/core/util/helper_functions/extension_functions.dart';
 import 'package:task_wave/core/util/helper_functions/helper_functions.dart';
-import 'package:task_wave/features/kanban_board/data/data_sources/local_datasource/task_datasource.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
 import 'package:task_wave/features/kanban_board/presentation/pages/task/bloc/task_bloc.dart';
 import 'package:task_wave/features/kanban_board/presentation/pages/task/bloc/task_state.dart';
@@ -23,6 +23,7 @@ class PieChartWidget extends StatefulWidget {
   @override
   State<PieChartWidget> createState() => _PieChartWidgetState();
 }
+
 class _PieChartWidgetState extends State<PieChartWidget> {
   final BoardViewController boardViewController = new BoardViewController();
 
@@ -65,66 +66,52 @@ class _PieChartWidgetState extends State<PieChartWidget> {
           };
 
           return Builder(builder: (context) {
-            return Card(
-              color: Colors.transparent,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-              child: Container(
-                child: tasks.isEmpty
-                    ? noData()
-                    : Padding(
-                        padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 16.h, bottom: 16.h),
-                        child: Column(
-                          children: [
-                            PieChart(
-                              dataMap: statusMap,
-                              colorList: pieColor,
-                              animationDuration: const Duration(milliseconds: 1000),
-                              initialAngleInDegree: -90,
-                              chartLegendSpacing: 20,
-                              legendOptions: const LegendOptions(
-                                legendPosition: LegendPosition.right,
-                                legendTextStyle: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              chartValuesOptions: ChartValuesOptions(
-                                chartValueStyle:
-                                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16.sp),
-                                showChartValueBackground: false,
-                                showChartValues: true,
-                                showChartValuesInPercentage: true,
-                                showChartValuesOutside: false,
-                                decimalPlaces: 1,
-                              ),
-                            ),
-                            context.vGap8,
-                            Padding(
-                              padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 8.h, bottom: 8.h),
-                              child: GestureDetector(
-                                onTap: () {
-                                  pushPage(context, AppRoutes.taskRoute);
-                                },
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    AppStrings.goToTask.toTextWidget(
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w800,
-                                        color: context.primary,
-                                        fontSize: 18.sp,
-                                      ),
-                                    ),
-                                    context.hGap4,
-                                    Icon(
-                                      Icons.arrow_circle_right_sharp,
-                                      color: context.primary,
-                                    )
-                                  ],
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                  child: Text(
+                    AppStrings.trackYourProgress,
+                    maxLines: 1,
+                    style: context.displaySmall.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                  child: tasks.isEmpty
+                      ? noData()
+                      : Padding(
+                          padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 16.h, bottom: 16.h),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(14.0),
+                                child: PieChart(
+                                  dataMap: statusMap,
+                                  colorList: pieColor,
+                                  animationDuration: const Duration(milliseconds: 1000),
+                                  initialAngleInDegree: -90,
+                                  chartLegendSpacing: 20,
+                                  legendOptions: const LegendOptions(
+                                    legendPosition: LegendPosition.right,
+                                    legendTextStyle: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  chartValuesOptions: ChartValuesOptions(
+                                    chartValueStyle:
+                                        TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16.sp),
+                                    showChartValueBackground: false,
+                                    showChartValues: true,
+                                    showChartValuesInPercentage: true,
+                                    showChartValuesOutside: false,
+                                    decimalPlaces: 1,
+                                  ),
                                 ),
                               ),
-                            )
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-              ),
+                ),
+              ],
             );
           });
         } else if (state is TaskError) {

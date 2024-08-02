@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:size_config/size_config.dart';
+import 'package:task_wave/core/theme/app_sizes.dart';
 import 'package:task_wave/core/theme/app_theme.dart';
 import 'package:task_wave/core/util/helper_functions/extension_functions.dart';
 
@@ -48,7 +49,8 @@ class _ClockDigWidgetState extends State<ClockDigWidget> {
 
   Widget clockWidget() {
     return Card(
-      color: Colors.transparent,
+      color: Colors.white,
+      elevation: 10,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       child: Container(
         height: 70.h,
@@ -72,7 +74,8 @@ class _ClockDigWidgetState extends State<ClockDigWidget> {
     String date = DateFormat('MMMM d yyyy').format(DateTime.now());
 
     return Card(
-      color: Colors.transparent,
+      color: Colors.white,
+      elevation: 10,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       child: Container(
         height: 70.h,

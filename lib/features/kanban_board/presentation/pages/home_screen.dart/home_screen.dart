@@ -9,6 +9,7 @@ import 'package:task_wave/core/util/constants/app_strings.dart';
 import 'package:task_wave/core/util/helper_functions/extension_functions.dart';
 import 'package:task_wave/features/kanban_board/presentation/widgets/base_widget.dart';
 import 'package:task_wave/features/kanban_board/presentation/widgets/clock_widget.dart';
+import 'package:task_wave/features/kanban_board/presentation/widgets/horizontal_task_view.dart';
 import 'package:task_wave/features/kanban_board/presentation/widgets/pie_chart_widget.dart';
 import 'package:task_wave/features/kanban_board/presentation/widgets/welcome_widget.dart';
 
@@ -58,8 +59,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: 14.w,
               ),
               child: WelcomeWidget()),
-          context.vGap30,
+          context.vGap8,
+
           ClockDigWidget(),
+
+          HorizontalTaskView(),
+          context.vGap8,
           PieChartWidget(),
         ],
       ),
