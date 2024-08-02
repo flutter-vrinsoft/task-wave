@@ -83,7 +83,7 @@ class _PieChartWidgetState extends State<PieChartWidget> {
                   child: tasks.isEmpty
                       ? noData()
                       : Padding(
-                          padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 16.h, bottom: 16.h),
+                          padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 8.h, bottom: 16.h),
                           child: Column(
                             children: [
                               Padding(
