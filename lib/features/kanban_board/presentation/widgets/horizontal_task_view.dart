@@ -16,6 +16,7 @@ import 'package:task_wave/core/util/helper_functions/helper_functions.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
 import 'package:task_wave/features/kanban_board/presentation/pages/task/bloc/task_bloc.dart';
 import 'package:task_wave/features/kanban_board/presentation/pages/task/bloc/task_state.dart';
+import 'package:task_wave/features/kanban_board/presentation/pages/task/task_detail_page.dart';
 
 class HorizontalTaskView extends StatefulWidget {
   HorizontalTaskView({super.key});
@@ -49,7 +50,7 @@ class _PieChartWidgetState extends State<HorizontalTaskView> {
           return Builder(builder: (context) {
             return Container(
               child: tasks.isEmpty
-                  ? noData()
+                  ? Container()
                   : Padding(
                       padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 16.h, bottom: 16.h),
                       child: Column(
@@ -104,77 +105,85 @@ class _PieChartWidgetState extends State<HorizontalTaskView> {
                                   randomColor,
                                 );
                                 Task model = tasks[index];
-                                return Container(
-                                  margin: EdgeInsets.only(right: 10),
-                                  padding: const EdgeInsets.all(16.0),
-                                  width: 180.w,
-                                  decoration: BoxDecoration(
-                                    color: randomColor.withOpacity(1.0),
-                                    borderRadius: BorderRadius.circular(18),
-                                    border: Border.all(color: context.primary)
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.task_alt,
-                                            color: AppColors.textColorForBackground(
-                                              randomColor,
-                                            ),
-                                          ),
-                                          context.hGap8,
-                                          Flexible(
-                                            child: Text("${model.name}",
-                                                maxLines: 1,
-                                                style: context.displaySmall.copyWith(
-                                                  color: textColor,
-                                                )),
-                                          ),
-                                        ],
-                                      ),
-                                      Flexible(
-                                        child: Text("${model.description}",
-                                            maxLines: 3,
-                                            style: TextStyle(
-                                              fontSize: 18.sp,
-                                              color: textColor,
-                                            )),
-                                      ),
-                                      context.vGap8,
-                                      Expanded(
-                                        child: Wrap(
+                                return GestureDetector(
+                                  onTap: (){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => TaskDetailPage(task: model)),
+                                    );
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.only(right: 10),
+                                    padding: const EdgeInsets.all(16.0),
+                                    width: 180.w,
+                                    decoration: BoxDecoration(
+                                      color: randomColor.withOpacity(1.0),
+                                      borderRadius: BorderRadius.circular(18),
+                                      border: Border.all(color: context.primary)
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
                                           children: [
                                             Icon(
-                                              Icons.circle,
-                                              color: model.status.statusColor(),
+                                              Icons.task_alt,
+                                              color: AppColors.textColorForBackground(
+                                                randomColor,
+                                              ),
                                             ),
-                                            context.hGap4,
-                                            Text(
-                                              "${model.status.toUpperCase()}",
-                                              style: TextStyle(height: 1.5, color: textColor, fontSize: 14.sp),
+                                            context.hGap8,
+                                            Flexible(
+                                              child: Text("${model.name}",
+                                                  maxLines: 1,
+                                                  style: context.displaySmall.copyWith(
+                                                    color: textColor,
+                                                  )),
                                             ),
                                           ],
                                         ),
-                                      ),
-                                      context.vGap8,
-                                      Expanded(
-                                        child: Wrap(
-                                          children: [
-                                            Icon(
-                                              Icons.date_range,
-                                              color: textColor,
-                                            ),
-                                            context.hGap4,
-                                            Text(
-                                              "${model.dueDate.toLocalDateString()}",
-                                              style: TextStyle(height: 1.5, color: textColor, fontSize: 14.sp),
-                                            ),
-                                          ],
+                                        Flexible(
+                                          child: Text("${model.description}",
+                                              maxLines: 3,
+                                              style: TextStyle(
+                                                fontSize: 18.sp,
+                                                color: textColor,
+                                              )),
                                         ),
-                                      )
-                                    ],
+                                        context.vGap8,
+                                        Expanded(
+                                          child: Wrap(
+                                            children: [
+                                              Icon(
+                                                Icons.circle,
+                                                color: model.status.statusColor(),
+                                              ),
+                                              context.hGap4,
+                                              Text(
+                                                "${model.status.toUpperCase()}",
+                                                style: TextStyle(height: 1.5, color: textColor, fontSize: 14.sp),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        context.vGap8,
+                                        Expanded(
+                                          child: Wrap(
+                                            children: [
+                                              Icon(
+                                                Icons.date_range,
+                                                color: textColor,
+                                              ),
+                                              context.hGap4,
+                                              Text(
+                                                "${model.dueDate.toLocalDateString()}",
+                                                style: TextStyle(height: 1.5, color: textColor, fontSize: 14.sp),
+                                              ),
+                                            ],
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 );
                               },
