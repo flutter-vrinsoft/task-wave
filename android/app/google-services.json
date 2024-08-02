@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1077769398417",
+    "project_id": "taskwave-262de",
+    "storage_bucket": "taskwave-262de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1077769398417:android:70921415eb53298d237730",
+        "android_client_info": {
+          "package_name": "com.app.taskwave"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2v_cshrm93f8FZ22PFhC0JwVlt3SbLPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
