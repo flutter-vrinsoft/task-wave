@@ -56,12 +56,6 @@ class CustomTextField extends StatelessWidget {
                 errorBorder: InputBorder.none,
                 focusedErrorBorder: InputBorder.none,
                 contentPadding: EdgeInsets.all(9)),
-            // validator: (value) {
-            //   if (value == null || value.isEmpty) {
-            //     return '';
-            //   }
-            //   return null;
-            // },
           ),
         ),
       ],

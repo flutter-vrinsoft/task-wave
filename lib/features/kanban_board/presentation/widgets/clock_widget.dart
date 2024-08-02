@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:size_config/size_config.dart';
-import 'package:task_wave/core/theme/app_sizes.dart';
 import 'package:task_wave/core/theme/app_theme.dart';
 import 'package:task_wave/core/util/helper_functions/extension_functions.dart';
 
@@ -54,15 +54,16 @@ class _ClockDigWidgetState extends State<ClockDigWidget> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       child: Container(
         height: 70.h,
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(6.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(
-              Icons.timer,
-              size: 30,
-            ),
-            formattedTime.toTextWidget(style: context.titleLarge.copyWith(fontWeight: FontWeight.bold)),
+
+            formattedTime.toTextWidget(
+                style: GoogleFonts.orbitron(
+                    textStyle: context.titleLarge.copyWith(
+              fontWeight: FontWeight.bold,
+            ))),
           ],
         ),
       ),
@@ -86,8 +87,12 @@ class _ClockDigWidgetState extends State<ClockDigWidget> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                dayOfWeek.toTextWidget(style: context.titleLarge.copyWith(fontWeight: FontWeight.bold)),
-                date.toTextWidget(style: context.titleMedium),
+                dayOfWeek.toTextWidget(
+                    style: GoogleFonts.orbitron(textStyle: context.titleLarge.copyWith(fontWeight: FontWeight.bold))),
+                date.toTextWidget(
+                    style: context.titleMedium.copyWith(
+                  fontWeight: FontWeight.w700,
+                )),
               ],
             ),
             Icon(

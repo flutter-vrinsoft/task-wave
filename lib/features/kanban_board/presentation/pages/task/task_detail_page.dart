@@ -28,8 +28,8 @@ class TaskDetailPage extends StatefulWidget {
 
 class _TaskDetailPageState extends State<TaskDetailPage> {
   Timer? _timer;
-  int _elapsedTime = 0; // Total elapsed time in seconds
-  int _startTime = 0; // Time when the timer was started/resumed
+  int _elapsedTime = 0;
+  int _startTime = 0;
   bool _isRunning = false;
   List<Comment> comments = [];
   TextEditingController commentController = TextEditingController();

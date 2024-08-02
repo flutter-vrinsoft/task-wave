@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boardview/boardview_controller.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:size_config/size_config.dart';
 import 'package:task_wave/core/routes/app_routes.dart';
@@ -63,7 +64,7 @@ class _PieChartWidgetState extends State<HorizontalTaskView> {
                               Text(
                                 AppStrings.yourTasks,
                                 maxLines: 1,
-                                style: context.displaySmall.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
+                                style: context.displaySmall.copyWith(color: Colors.black, fontWeight: FontWeight.bold,fontFamily: GoogleFonts.palanquin().fontFamily),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 8.h, bottom: 8.h),

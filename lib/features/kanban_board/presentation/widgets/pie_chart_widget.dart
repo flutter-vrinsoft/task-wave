@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_boardview/boardview_controller.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:size_config/size_config.dart';
 import 'package:task_wave/core/routes/app_routes.dart';
@@ -75,7 +76,7 @@ class _PieChartWidgetState extends State<PieChartWidget> {
                   child: Text(
                     AppStrings.trackYourProgress,
                     maxLines: 1,
-                    style: context.displaySmall.copyWith(color: Colors.black, fontWeight: FontWeight.bold),
+                    style: context.displaySmall.copyWith(color: Colors.black, fontWeight: FontWeight.bold,fontFamily: GoogleFonts.palanquin().fontFamily),
                   ),
                 ),
                 Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:size_config/size_config.dart';
 import 'package:task_wave/core/theme/app_sizes.dart';
 import 'package:task_wave/core/theme/app_theme.dart';
@@ -16,42 +17,40 @@ class WelcomeWidget extends StatelessWidget {
             text: TextSpan(children: [
           TextSpan(
             text: AppStrings.hello,
-            style: TextStyle(
+            style: GoogleFonts.badScript(textStyle: TextStyle(
               fontWeight: FontWeight.bold,
               color: context.tertiary,
               fontSize: 32.sp,
-            ),
+            )),
           ),
           TextSpan(
             text: " ",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: context.primary.withOpacity(
-                  0.8,
-                ),
-                fontSize: 28.sp),
+            style: GoogleFonts.alexBrush(textStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: context.tertiary,
+              fontSize: 32.sp,
+            )) ,
           ),
           TextSpan(
             text: AppStrings.userName,
-            style: TextStyle(
+            style: GoogleFonts.badScript(textStyle: GoogleFonts.alexBrush(textStyle: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: context.primary.withOpacity(
                   0.8,
                 ),
-                fontSize: 28.sp),
+                fontSize: 28.sp))),
           ),
         ])),
-        context.vGap8,
         RichText(
           text: TextSpan(
             children: [
               TextSpan(
                 text: AppStrings.goodToSeeYou,
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: context.onInverseSurface,
-                  fontSize: 24.sp,
-                ),
+                style: GoogleFonts.dancingScript(textStyle: GoogleFonts.alexBrush(textStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: context.tertiary,
+                  fontSize: 32.sp,
+                ))),
               ),
             ],
           ),

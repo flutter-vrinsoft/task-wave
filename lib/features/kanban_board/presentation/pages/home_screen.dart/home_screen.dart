@@ -59,10 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 top: 14.w,
               ),
               child: WelcomeWidget()),
-          context.vGap8,
-
+          context.vGap16,
           ClockDigWidget(),
-
           HorizontalTaskView(),
           context.vGap8,
           PieChartWidget(),

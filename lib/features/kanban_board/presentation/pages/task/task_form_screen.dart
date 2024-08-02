@@ -45,7 +45,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
           height: MediaQuery.of(context).copyWith().size.height / 3,
           child: Column(
             children: [
-              // Time picker
+
               Expanded(
                 child: CupertinoDatePicker(
                   mode: CupertinoDatePickerMode.dateAndTime,
@@ -60,7 +60,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                 ),
               ),
 
-              // Close button
+
               TextButton(onPressed: (){
                 dateController.text = pickedDate!.formatToddMMMMyyHHmm();
                 Navigator.pop(context);

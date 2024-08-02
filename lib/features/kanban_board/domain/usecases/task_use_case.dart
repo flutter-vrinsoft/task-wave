@@ -28,9 +28,7 @@ class UpdateTask {
 
 class DeleteTask {
   final TaskRepository repository;
-
   DeleteTask(this.repository);
-
   Future<void> call(String taskId) {
     return repository.deleteTask(taskId);
   }

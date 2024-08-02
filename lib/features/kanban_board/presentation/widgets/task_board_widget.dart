@@ -86,7 +86,6 @@ class _TaskBoardWidgetState extends State<TaskBoardWidget> {
 
         onDropItem: (int? listIndex, int? itemIndex, int? oldListIndex, int? oldItemIndex, BoardItemState state) {
           //Used to update our local item data
-
           if (oldListIndex != listIndex) {
             debugPrint("ITEM DROPPED listIndex $listIndex");
             debugPrint("ITEM DROPPED itemIndex $itemIndex");
@@ -98,11 +97,9 @@ class _TaskBoardWidgetState extends State<TaskBoardWidget> {
             }
             if (listIndex == 1) {
               context.read<TaskBloc>().add(UpdateTaskEvent(model.copyWith(status: 'pending', isCompleted: false)));
-              // getIt<TaskCubit>().updateTask(entity, stateUser!.uuid);
             }
             if (listIndex == 2) {
               context.read<TaskBloc>().add(UpdateTaskEvent(model.copyWith(status: 'completed', isCompleted: true)));
-              // getIt<TaskCubit>().updateTask(entity, stateUser!.uuid);
             }
           }
 
