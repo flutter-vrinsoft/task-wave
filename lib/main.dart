@@ -1,3 +1,4 @@
+import 'package:appcenter_sdk_flutter/appcenter_sdk_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,8 @@ Future<void> main() async {
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(TaskAdapter());
   Hive.registerAdapter(CommentAdapter());
-
+  await AppCenter.start(secret: "c54ebafe-45dd-482d-99d8-edbcd88dbc78");
+  await AppCenter.enable();
   await Hive.openBox<Task>('tasks');
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(

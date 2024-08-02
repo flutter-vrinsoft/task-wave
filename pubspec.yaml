@@ -56,10 +56,12 @@ dependencies:
   flutter_local_notifications: ^17.2.1+2
   permission_handler: ^11.3.1
   flutter_timezone: ^2.1.0
-  firebase_core: ^3.3.0
   syncfusion_flutter_calendar: ^26.2.7
 
   #firebase
+  firebase_core: ^3.3.0
+
+  appcenter_sdk_flutter: ^0.5.1
 
 dev_dependencies:
   flutter_test:
