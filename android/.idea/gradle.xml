@@ -20,6 +20,7 @@
         <option name="modules">
           <set>
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/android_intent_plus-5.1.0/android" />
+            <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/appcenter_sdk_flutter-0.5.1/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/firebase_core-3.3.0/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_local_notifications-17.2.1+2/android" />
             <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/flutter_timezone-2.1.0/android" />
