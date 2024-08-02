@@ -69,7 +69,8 @@ class _PieChartWidgetState extends State<PieChartWidget> {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
+                tasks.isEmpty
+                    ?Container() :   Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 14.0),
                   child: Text(
                     AppStrings.trackYourProgress,
