@@ -24,7 +24,6 @@ String currentUtcTime() {
 }
 
 void addToCalendar(Task task) async {
-  const platform = MethodChannel('com.app.taskwave/calendar');
 
   final intent = AndroidIntent(
     action: 'android.intent.action.INSERT', // Important
@@ -47,7 +46,6 @@ void addToCalendar(Task task) async {
 }
 
 void addToCalendar1(Task task) async {
-  const platform = MethodChannel('com.app.taskwave/calendar');
 
   try {
     /*  String localTimezone = await FlutterTimezone.getLocalTimezone();
@@ -70,6 +68,6 @@ void addToCalendar1(Task task) async {
 }
 
 Future<bool> requestPermissions() async {
-  PermissionStatus calendarPermissionStatus = await Permission.calendar.request();
+  PermissionStatus calendarPermissionStatus = await Permission.calendarWriteOnly.request();
   return calendarPermissionStatus.isGranted;
 }

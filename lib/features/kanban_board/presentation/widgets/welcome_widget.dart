@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:size_config/size_config.dart';
-import 'package:task_wave/core/theme/app_sizes.dart';
 import 'package:task_wave/core/theme/app_theme.dart';
 import 'package:task_wave/core/util/constants/app_strings.dart';
 

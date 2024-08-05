@@ -9,6 +9,7 @@ abstract class TaskEvent extends Equatable {
 
 class LoadTasks extends TaskEvent {}
 
+// ignore: must_be_immutable
 class AddTaskEvent extends TaskEvent {
   final Task task;
   bool isAddToCalendar;
