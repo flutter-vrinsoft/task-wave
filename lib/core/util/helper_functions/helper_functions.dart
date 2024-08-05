@@ -1,4 +1,4 @@
-import 'package:android_intent_plus/android_intent.dart';
+// import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
@@ -25,7 +25,7 @@ String currentUtcTime() {
 
 void addToCalendar(Task task) async {
 
-  final intent = AndroidIntent(
+  /*final intent = AndroidIntent(
     action: 'android.intent.action.INSERT', // Important
     data: 'content://com.android.calendar/event', // Important
     type: "vnd.android.cursor.dir/event", // Important
@@ -42,7 +42,7 @@ void addToCalendar(Task task) async {
     },
   );
 
-  intent.launch();
+  intent.launch();*/
 }
 
 void addToCalendar1(Task task) async {

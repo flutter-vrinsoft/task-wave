@@ -151,7 +151,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                           Icons.date_range,
                         ),
                       )),
-                  context.vGap16,
+                  /*context.vGap16,
                   if (Platform.isAndroid)
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -196,7 +196,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                           ),
                         )
                       ],
-                    ),
+                    ),*/
                   context.vGap38,
                   CustomButton(
                       text: AppStrings.addTask,
