@@ -7,7 +7,6 @@ enum TaskStatusEnum {
 
 enum ViewAs { list, board }
 
-
 extension TaskStatusEnumExtension on String? {
   TaskStatusEnum? toTaskStatusType() {
     TaskStatusEnum? value;

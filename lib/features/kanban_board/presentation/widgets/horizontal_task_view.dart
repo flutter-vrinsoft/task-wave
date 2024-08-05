@@ -57,7 +57,8 @@ class _PieChartWidgetState extends State<HorizontalTaskView> {
           return Builder(builder: (context) {
             return Container(
               child: tasks.isEmpty
-                  ? Container()                  : Padding(
+                  ? Container()
+                  : Padding(
                       padding: EdgeInsets.only(left: 14.w, right: 14.w, top: 16.h, bottom: 16.h),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,13 +111,12 @@ class _PieChartWidgetState extends State<HorizontalTaskView> {
                             height: 150.h,
                             child: CarouselSlider(
                               options: CarouselOptions(
-                                aspectRatio: 2.0,
-                                enlargeCenterPage: true,
-                                enableInfiniteScroll: false,
-                                initialPage: 1,
-                                autoPlay: true,
-                                padEnds: false
-                              ),
+                                  aspectRatio: 2.0,
+                                  enlargeCenterPage: true,
+                                  enableInfiniteScroll: false,
+                                  initialPage: 1,
+                                  autoPlay: true,
+                                  padEnds: false),
                               items: tasks.map((i) {
                                 Color randomColor = Colors.white;
                                 Color textColor = AppColors.textColorForBackground(
@@ -135,7 +135,6 @@ class _PieChartWidgetState extends State<HorizontalTaskView> {
                                       child: Container(
                                         margin: EdgeInsets.only(right: 10),
                                         padding: const EdgeInsets.all(16.0),
-
                                         decoration: BoxDecoration(
                                             color: randomColor.withOpacity(1.0),
                                             borderRadius: BorderRadius.circular(18),

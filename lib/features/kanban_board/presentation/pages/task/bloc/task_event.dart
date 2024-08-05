@@ -13,7 +13,7 @@ class AddTaskEvent extends TaskEvent {
   final Task task;
   bool isAddToCalendar;
 
-  AddTaskEvent(this.task,this.isAddToCalendar);
+  AddTaskEvent(this.task, this.isAddToCalendar);
 
   @override
   List<Object> get props => [task];

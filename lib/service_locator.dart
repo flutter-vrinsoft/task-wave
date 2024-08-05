@@ -16,8 +16,7 @@ import 'core/util/services/network_service.dart';
 
 GetIt getIt = GetIt.instance;
 
-GlobalKey<NavigatorState> get navigatorKey =>
-    getIt.get<GlobalKey<NavigatorState>>();
+GlobalKey<NavigatorState> get navigatorKey => getIt.get<GlobalKey<NavigatorState>>();
 
 appSetup() async {
   await SharedPreferencesService.getInstance();
@@ -39,24 +38,17 @@ appSetup() async {
   );
 
   // Register Data Source
-  getIt.registerLazySingleton<TaskDataSource>(
-      () => TaskDataSource(taskBox: getIt<Box<Task>>()));
-
+  getIt.registerLazySingleton<TaskDataSource>(() => TaskDataSource(taskBox: getIt<Box<Task>>()));
 
   // Register Repository
-  getIt.registerLazySingleton<TaskRepository>(
-      () => TaskRepositoryImpl(dataSource: getIt<TaskDataSource>()));
+  getIt.registerLazySingleton<TaskRepository>(() => TaskRepositoryImpl(dataSource: getIt<TaskDataSource>()));
 
   // Register Use Cases
-  getIt
-      .registerLazySingleton<GetTasks>(() => GetTasks(getIt<TaskRepository>()));
+  getIt.registerLazySingleton<GetTasks>(() => GetTasks(getIt<TaskRepository>()));
   getIt.registerLazySingleton<AddTask>(() => AddTask(getIt<TaskRepository>()));
-  getIt.registerLazySingleton<UpdateTask>(
-      () => UpdateTask(getIt<TaskRepository>()));
-  getIt.registerLazySingleton<DeleteTask>(
-      () => DeleteTask(getIt<TaskRepository>()));
-  getIt.registerLazySingleton<AddCommentToTask>(
-      () => AddCommentToTask(getIt<TaskRepository>()));
+  getIt.registerLazySingleton<UpdateTask>(() => UpdateTask(getIt<TaskRepository>()));
+  getIt.registerLazySingleton<DeleteTask>(() => DeleteTask(getIt<TaskRepository>()));
+  getIt.registerLazySingleton<AddCommentToTask>(() => AddCommentToTask(getIt<TaskRepository>()));
 
   // Register Bloc
   getIt.registerFactory(() => TaskBloc(

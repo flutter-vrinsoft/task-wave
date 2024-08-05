@@ -27,7 +27,7 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
 
   final List<OnboardingPage> _pages = [
     OnboardingPage(
-        title: AppStrings.welcomeToTaskWave,
+      title: AppStrings.welcomeToTaskWave,
       description: AppStrings.thisIsAwesomeApp,
       image: AppImages.onBoarding1,
     ),
@@ -202,5 +202,3 @@ class _OnboardingScreenState extends State<OnBoardingScreen> {
     );
   }
 }
-
-

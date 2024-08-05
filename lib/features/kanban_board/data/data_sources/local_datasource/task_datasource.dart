@@ -14,6 +14,7 @@ class TaskDataSource {
   Future<void> addTask(Task task) async {
     await taskBox.put(task.id, task);
   }
+
   Future<void> updateTask(Task task) async {
     await taskBox.put(task.id, task);
   }

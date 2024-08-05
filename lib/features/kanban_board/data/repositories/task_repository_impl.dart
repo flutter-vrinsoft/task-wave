@@ -35,7 +35,6 @@ class TaskRepositoryImpl implements TaskRepository {
 
   @override
   Future<void> addTaskGoogleCalendar(Task task) async {
-
     await dataSource.addTask(task);
   }
 }

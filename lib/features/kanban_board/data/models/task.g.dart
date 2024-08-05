@@ -29,7 +29,6 @@ class TaskAdapter extends TypeAdapter<Task> {
       spentTime: fields[9] as int,
       isCompleted: fields[10] as bool,
       comments: (fields[11] as List).cast<Comment>(),
-
     );
   }
 
@@ -68,8 +67,5 @@ class TaskAdapter extends TypeAdapter<Task> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is TaskAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      identical(this, other) || other is TaskAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }

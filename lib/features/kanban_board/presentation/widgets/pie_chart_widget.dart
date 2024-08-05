@@ -71,14 +71,18 @@ class _PieChartWidgetState extends State<PieChartWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 tasks.isEmpty
-                    ?Container() :   Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                  child: Text(
-                    AppStrings.trackYourProgress,
-                    maxLines: 1,
-                    style: context.displaySmall.copyWith(color: Colors.black, fontWeight: FontWeight.bold,fontFamily: GoogleFonts.palanquin().fontFamily),
-                  ),
-                ),
+                    ? Container()
+                    : Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                        child: Text(
+                          AppStrings.trackYourProgress,
+                          maxLines: 1,
+                          style: context.displaySmall.copyWith(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: GoogleFonts.palanquin().fontFamily),
+                        ),
+                      ),
                 Container(
                   child: tasks.isEmpty
                       ? noData()

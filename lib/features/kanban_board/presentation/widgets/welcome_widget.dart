@@ -17,7 +17,8 @@ class WelcomeWidget extends StatelessWidget {
             text: TextSpan(children: [
           TextSpan(
             text: AppStrings.hello,
-            style: GoogleFonts.badScript(textStyle: TextStyle(
+            style: GoogleFonts.badScript(
+                textStyle: TextStyle(
               fontWeight: FontWeight.bold,
               color: context.tertiary,
               fontSize: 32.sp,
@@ -25,20 +26,23 @@ class WelcomeWidget extends StatelessWidget {
           ),
           TextSpan(
             text: " ",
-            style: GoogleFonts.alexBrush(textStyle: TextStyle(
+            style: GoogleFonts.alexBrush(
+                textStyle: TextStyle(
               fontWeight: FontWeight.bold,
               color: context.tertiary,
               fontSize: 32.sp,
-            )) ,
+            )),
           ),
           TextSpan(
             text: AppStrings.userName,
-            style: GoogleFonts.badScript(textStyle: GoogleFonts.alexBrush(textStyle: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: context.primary.withOpacity(
-                  0.8,
-                ),
-                fontSize: 28.sp))),
+            style: GoogleFonts.badScript(
+                textStyle: GoogleFonts.alexBrush(
+                    textStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: context.primary.withOpacity(
+                          0.8,
+                        ),
+                        fontSize: 28.sp))),
           ),
         ])),
         RichText(
@@ -46,7 +50,9 @@ class WelcomeWidget extends StatelessWidget {
             children: [
               TextSpan(
                 text: AppStrings.goodToSeeYou,
-                style: GoogleFonts.dancingScript(textStyle: GoogleFonts.alexBrush(textStyle: TextStyle(
+                style: GoogleFonts.dancingScript(
+                    textStyle: GoogleFonts.alexBrush(
+                        textStyle: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: context.tertiary,
                   fontSize: 32.sp,

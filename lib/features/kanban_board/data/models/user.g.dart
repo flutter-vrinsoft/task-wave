@@ -40,8 +40,5 @@ class UserAdapter extends TypeAdapter<User> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is UserAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      identical(this, other) || other is UserAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }

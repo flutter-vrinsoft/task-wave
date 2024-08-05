@@ -32,7 +32,7 @@ class TaskTile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          model.name ,
+                          model.name,
                           maxLines: 1,
                           style:
                               TextStyle(height: 1.5, color: Colors.black, fontSize: 18.sp, fontWeight: FontWeight.bold),

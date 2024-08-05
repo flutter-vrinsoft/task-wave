@@ -81,9 +81,7 @@ class _TaskBoardWidgetState extends State<TaskBoardWidget> {
     return BoardItem(
         onStartDragItem: (int? listIndex, int? itemIndex, BoardItemState state) {
           debugPrint("ON START DROPPED listIndex $listIndex");
-
         },
-
         onDropItem: (int? listIndex, int? itemIndex, int? oldListIndex, int? oldItemIndex, BoardItemState state) {
           //Used to update our local item data
           if (oldListIndex != listIndex) {

@@ -40,8 +40,5 @@ class CommentAdapter extends TypeAdapter<Comment> {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is CommentAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+      identical(this, other) || other is CommentAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }

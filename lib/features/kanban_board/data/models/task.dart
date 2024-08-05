@@ -41,7 +41,6 @@ class Task extends HiveObject {
   @HiveField(11)
   final List<Comment> comments;
 
-
   Task({
     required this.id,
     required this.name,

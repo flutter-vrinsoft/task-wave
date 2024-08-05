@@ -58,7 +58,6 @@ class _ClockDigWidgetState extends State<ClockDigWidget> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-
             formattedTime.toTextWidget(
                 style: GoogleFonts.orbitron(
                     textStyle: context.titleLarge.copyWith(

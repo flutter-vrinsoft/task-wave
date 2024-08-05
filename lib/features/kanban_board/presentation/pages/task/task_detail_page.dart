@@ -171,8 +171,6 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
     );
   }
 
-
-
   Widget dateWidget() {
     return Card(
       color: Colors.transparent,
@@ -239,13 +237,13 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
       ),
     );
   }
+
   Widget timeWidget() {
     return Card(
       color: Colors.transparent,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       child: Container(
-
           height: 160.h,
           padding: EdgeInsets.only(
             left: 14.w,
@@ -284,8 +282,8 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                       backgroundColor: _isRunning
                           ? Colors.red
                           : _elapsedTime == 0
-                          ? context.primary
-                          : Colors.orangeAccent,
+                              ? context.primary
+                              : Colors.orangeAccent,
                       child: Icon(
                         _isRunning ? Icons.stop_circle : Icons.play_circle,
                         color: Colors.white,

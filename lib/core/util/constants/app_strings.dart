@@ -46,8 +46,8 @@ class AppStrings {
   static String start = "START";
   static String skip = "SKIP";
   static String next = "NEXT";
-  static String pleaseAdd = "Please add proper data";static String letsGetStarted = 'Let\'s get started and enjoy!';
-
+  static String pleaseAdd = "Please add proper data";
+  static String letsGetStarted = 'Let\'s get started and enjoy!';
 
   static String API_KEY = "AIzaSyAqTXNfG7RQpObBnjikizEbpMQZUjyVhsM";
 
@@ -57,5 +57,3 @@ class AppStrings {
   static String yourTasks = 'Your Tasks';
   static String trackYourProgress = 'Track Your Progress';
 }
-
-
