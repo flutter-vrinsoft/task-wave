@@ -85,7 +85,7 @@ To build the APK for release:
  
    The generated APK will be located in `build/app/outputs/flutter-apk/app-release.apk`.
  
-# Automating workflow with CI/CD
+## Automating workflow with CI/CD
 Go to the Actions Tab
 Click on the "Actions" tab located at the top of your repository page. This will display a list of all workflows and their recent runs.
 Select the Workflow
