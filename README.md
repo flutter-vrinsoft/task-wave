@@ -86,16 +86,16 @@ To build the APK for release:
    The generated APK will be located in `build/app/outputs/flutter-apk/app-release.apk`.
  
 ## Automating workflow with CI/CD
-Go to the Actions Tab
+1. Go to the Actions Tab
 Click on the "Actions" tab located at the top of your repository page. This will display a list of all workflows and their recent runs.
-Select the Workflow
-Find the workflow you want to trigger or rerun. Click on the workflow to view the list of runs for that workflow.
-Manually Trigger a Workflow
-If your workflow is configured to support manual triggering (using the workflow_dispatch event), you will see a "Run workflow" button on the right side of the page. Click this button to start the workflow manually. If this button is not available, the workflow might not be configured for manual triggering.
- 
-Click "Run Workflow"
+2. Select the Workflow
+Find the workflow you want to trigger or rerun.
+3. Click on the workflow to view the list of runs for that workflow.
+4. Manually Trigger a Workflow
+If your workflow is configured to support manual triggering (using the workflow_dispatch event), you will see a "Run workflow" button on the right side of the page.
+5. Click this button to start the workflow manually. If this button is not available, the workflow might not be configured for manual triggering.
+6. Click "Run Workflow"
 Click the "Run workflow" button to initiate the workflow. You will be redirected to a page where you can monitor its progress.
-Rerun a Workflow
  
 ## Locating and Downloading Artifacts
 Once the workflow completes, you can find the built APK and other artifacts as follows:
