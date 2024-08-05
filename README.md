@@ -64,8 +64,7 @@ After running the app, you can:
 - **Create Tasks:** Tap on the "Create Task" button to add new tasks.
 - **Update Tasks:** Edit task details by selecting a task and updating its information.
 - **Comment on Tasks:** Add comments to tasks for collaboration.
-- **Add Task to Google Calendar:** Add Task to Google calendar with your choice.
-- **View Tasks with Kanban Board:** View your tasks in Kanban board.
+- **View Tasks with Kanban Board:** View your tasks in Kanban board , also you can drag them to update status of your tasks.
  
  
 ## Building the APK
