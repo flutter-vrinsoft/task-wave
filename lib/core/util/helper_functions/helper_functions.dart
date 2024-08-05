@@ -1,10 +1,8 @@
 // import 'package:android_intent_plus/android_intent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:go_router/go_router.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:task_wave/core/util/helper_functions/extension_functions.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
 
 navTo(BuildContext context, String route) {
