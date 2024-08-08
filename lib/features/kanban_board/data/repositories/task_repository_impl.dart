@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:task_wave/features/kanban_board/data/data_sources/local_datasource/task_datasource.dart';
 import 'package:task_wave/features/kanban_board/data/models/comment.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
+import 'package:task_wave/features/kanban_board/data/models/time_log.dart';
 import 'package:task_wave/features/kanban_board/domain/repositories/task_repository.dart';
 
 class TaskRepositoryImpl implements TaskRepository {
@@ -34,8 +37,12 @@ class TaskRepositoryImpl implements TaskRepository {
   }
 
   @override
-  Future<void> addTaskGoogleCalendar(Task task) async {
+  Future<void> addTimeLogToTask(String taskId, TimeLog timeLog) async {
+    await dataSource.addTimeLogToTask(taskId, timeLog);
+  }
 
+  @override
+  Future<void> addTaskGoogleCalendar(Task task) async {
     await dataSource.addTask(task);
   }
 }

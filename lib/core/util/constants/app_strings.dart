@@ -25,6 +25,7 @@ class AppStrings {
   static String lookLikeDonTHaveTask = "Looks like you don't have task ";
   static String userName = "User .";
   static String comments = "Comments";
+  static String timeLogs = "Time Logs";
   static String addComment = "Add Comment";
   static String completeTask = "Complete Task";
   static String pickAColor = "Pick a color";

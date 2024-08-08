@@ -1,5 +1,6 @@
 import 'package:task_wave/features/kanban_board/data/models/comment.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
+import 'package:task_wave/features/kanban_board/data/models/time_log.dart';
 import 'package:task_wave/features/kanban_board/domain/repositories/task_repository.dart';
 
 class GetTasks {
@@ -41,5 +42,15 @@ class AddCommentToTask {
 
   Future<void> call(String taskId, Comment comment) {
     return repository.addCommentToTask(taskId, comment);
+  }
+}
+
+class AddTimeLogToTask {
+  final TaskRepository repository;
+
+  AddTimeLogToTask(this.repository);
+
+  Future<void> call(String taskId, TimeLog timeLog) {
+    return repository.addTimeLogToTask(taskId, timeLog);
   }
 }

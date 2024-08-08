@@ -18,6 +18,8 @@ class MockDeleteTask extends Mock implements DeleteTask {}
 
 class MockAddCommentToTask extends Mock implements AddCommentToTask {}
 
+class MockAddTimeLogToTask extends Mock implements AddTimeLogToTask {}
+
 void main() {
   late TaskBloc bloc;
   late MockGetTasks mockGetTasks;
@@ -25,6 +27,7 @@ void main() {
   late MockUpdateTask mockUpdateTask;
   late MockDeleteTask mockDeleteTask;
   late MockAddCommentToTask mockAddCommentToTask;
+  late MockAddTimeLogToTask mockAddTimeLogToTask;
 
   setUp(() {
     mockGetTasks = MockGetTasks();
@@ -32,6 +35,7 @@ void main() {
     mockUpdateTask = MockUpdateTask();
     mockDeleteTask = MockDeleteTask();
     mockAddCommentToTask = MockAddCommentToTask();
+    mockAddTimeLogToTask = MockAddTimeLogToTask();
 
     bloc = TaskBloc(
       getTasks: mockGetTasks,
@@ -39,6 +43,7 @@ void main() {
       updateTask: mockUpdateTask,
       deleteTask: mockDeleteTask,
       addCommentToTask: mockAddCommentToTask,
+      addTimeLogToTask: mockAddTimeLogToTask,
     );
   });
 
@@ -60,6 +65,7 @@ void main() {
                 spentTime: 0,
                 isCompleted: false,
                 comments: [],
+                timeLogs: [],
               ),
               Task(
                 id: '2',
@@ -74,6 +80,7 @@ void main() {
                 spentTime: 0,
                 isCompleted: false,
                 comments: [],
+                timeLogs: [],
               ),
             ]);
         return bloc;
@@ -95,6 +102,7 @@ void main() {
             spentTime: 0,
             isCompleted: false,
             comments: [],
+            timeLogs: [],
           ),
           Task(
             id: '2',
@@ -109,6 +117,7 @@ void main() {
             spentTime: 0,
             isCompleted: false,
             comments: [],
+            timeLogs: [],
           ),
         ]),
       ],

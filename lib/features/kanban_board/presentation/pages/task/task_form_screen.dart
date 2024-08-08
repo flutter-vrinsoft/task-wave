@@ -45,7 +45,6 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
           height: MediaQuery.of(context).copyWith().size.height / 3,
           child: Column(
             children: [
-
               Expanded(
                 child: CupertinoDatePicker(
                   mode: CupertinoDatePickerMode.dateAndTime,
@@ -59,12 +58,12 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                   },
                 ),
               ),
-
-
-              TextButton(onPressed: (){
-                dateController.text = pickedDate!.formatToddMMMMyyHHmm();
-                Navigator.pop(context);
-              }, child: "Save".toTextWidget(style: context.headlineMedium)),
+              TextButton(
+                  onPressed: () {
+                    dateController.text = pickedDate!.formatToddMMMMyyHHmm();
+                    Navigator.pop(context);
+                  },
+                  child: "Save".toTextWidget(style: context.headlineMedium)),
             ],
           ),
         );
@@ -209,6 +208,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
                               name: _titleController.text,
                               description: _descriptionController.text,
                               comments: widget.task?.comments ?? [],
+                              timeLogs: widget.task?.timeLogs ?? [],
                               createdAt: currentUtcTime(),
                               userId: AppStrings.userId,
                               updatedAt: currentUtcTime(),

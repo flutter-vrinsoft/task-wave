@@ -57,6 +57,8 @@ appSetup() async {
       () => DeleteTask(getIt<TaskRepository>()));
   getIt.registerLazySingleton<AddCommentToTask>(
       () => AddCommentToTask(getIt<TaskRepository>()));
+  getIt.registerLazySingleton<AddTimeLogToTask>(
+      () => AddTimeLogToTask(getIt<TaskRepository>()));
 
   // Register Bloc
   getIt.registerFactory(() => TaskBloc(
@@ -65,5 +67,6 @@ appSetup() async {
         updateTask: getIt<UpdateTask>(),
         deleteTask: getIt<DeleteTask>(),
         addCommentToTask: getIt<AddCommentToTask>(),
+        addTimeLogToTask: getIt<AddTimeLogToTask>(),
       ));
 }

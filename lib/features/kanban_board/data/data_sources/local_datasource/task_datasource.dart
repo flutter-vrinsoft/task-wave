@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:task_wave/features/kanban_board/data/models/comment.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
+import 'package:task_wave/features/kanban_board/data/models/time_log.dart';
 
 class TaskDataSource {
   final Box<Task> taskBox;
@@ -14,6 +17,7 @@ class TaskDataSource {
   Future<void> addTask(Task task) async {
     await taskBox.put(task.id, task);
   }
+
   Future<void> updateTask(Task task) async {
     await taskBox.put(task.id, task);
   }
@@ -26,6 +30,14 @@ class TaskDataSource {
     final task = taskBox.get(taskId);
     if (task != null) {
       task.comments.add(comment);
+      await taskBox.put(task.id, task);
+    }
+  }
+
+  Future<void> addTimeLogToTask(String taskId, TimeLog timeLog) async {
+    final task = taskBox.get(taskId);
+    if (task != null) {
+      task.timeLogs.add(timeLog);
       await taskBox.put(task.id, task);
     }
   }

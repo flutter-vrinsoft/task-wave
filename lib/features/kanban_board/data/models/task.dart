@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:task_wave/features/kanban_board/data/models/time_log.dart';
 import 'comment.dart';
 
 part 'task.g.dart';
@@ -41,6 +42,8 @@ class Task extends HiveObject {
   @HiveField(11)
   final List<Comment> comments;
 
+  @HiveField(12)
+  final List<TimeLog> timeLogs;
 
   Task({
     required this.id,
@@ -55,6 +58,7 @@ class Task extends HiveObject {
     required this.spentTime,
     required this.isCompleted,
     required this.comments,
+    required this.timeLogs,
   });
 
   Task copyWith({
@@ -70,6 +74,7 @@ class Task extends HiveObject {
     int? spentHours,
     bool? isCompleted,
     List<Comment>? comments,
+    List<TimeLog>? timeLogs,
     String? endTime,
   }) {
     return Task(
@@ -85,6 +90,7 @@ class Task extends HiveObject {
       spentTime: spentHours ?? this.spentTime,
       isCompleted: isCompleted ?? this.isCompleted,
       comments: comments ?? this.comments,
+      timeLogs: timeLogs ?? this.timeLogs,
     );
   }
 }

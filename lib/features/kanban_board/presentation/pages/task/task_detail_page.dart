@@ -165,13 +165,12 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
             ],
           ),
           context.vGap4,
+          timeLogCard(),
           commentCard()
         ],
       ),
     );
   }
-
-
 
   Widget dateWidget() {
     return Card(
@@ -239,13 +238,13 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
       ),
     );
   }
+
   Widget timeWidget() {
     return Card(
       color: Colors.transparent,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
       child: Container(
-
           height: 160.h,
           padding: EdgeInsets.only(
             left: 14.w,
@@ -284,8 +283,8 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                       backgroundColor: _isRunning
                           ? Colors.red
                           : _elapsedTime == 0
-                          ? context.primary
-                          : Colors.orangeAccent,
+                              ? context.primary
+                              : Colors.orangeAccent,
                       child: Icon(
                         _isRunning ? Icons.stop_circle : Icons.play_circle,
                         color: Colors.white,
@@ -309,6 +308,40 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
               ),
             ],
           )),
+    );
+  }
+
+  Widget timeLogCard() {
+    return Visibility(
+      visible: widget.task.timeLogs.isNotEmpty,
+      child: Card(
+        color: Colors.transparent,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppStrings.timeLogs.toTextWidget(
+                  style: context.titleMedium
+                      .copyWith(fontSize: 22.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+              context.vGap6,
+              ListView.builder(
+                shrinkWrap: true,
+                padding: EdgeInsets.zero,
+                itemCount: comments.length,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (ctx, ind) {
+                  return ListTile(
+                    leading: Icon(Icons.comment, color: Colors.white),
+                    title: comments.elementAt(ind).content.toTextWidget(
+                        style: TextStyle(fontSize: 14.sp, color: Colors.white, fontWeight: FontWeight.w700)),
+                  );
+                },
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 

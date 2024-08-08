@@ -32,6 +32,7 @@ void main() {
     spentTime: 0,
     isCompleted: false,
     comments: [],
+    timeLogs: [],
   );
 
   group('TaskRepositoryImpl Tests', () {

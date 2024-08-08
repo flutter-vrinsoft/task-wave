@@ -12,6 +12,7 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
   final UpdateTask updateTask;
   final DeleteTask deleteTask;
   final AddCommentToTask addCommentToTask;
+  final AddTimeLogToTask addTimeLogToTask;
 
   TaskBloc({
     required this.getTasks,
@@ -19,12 +20,14 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
     required this.updateTask,
     required this.deleteTask,
     required this.addCommentToTask,
+    required this.addTimeLogToTask,
   }) : super(TaskLoading()) {
     on<LoadTasks>(_onLoadTasks);
     on<AddTaskEvent>(_onAddTask);
     on<UpdateTaskEvent>(_onUpdateTask);
     on<DeleteTaskEvent>(_onDeleteTask);
     on<AddCommentToTaskEvent>(_onAddCommentToTask);
+    on<AddTimeLogToTaskEvent>(_onAddTimeLogToTask);
   }
 
   void _onLoadTasks(LoadTasks event, Emitter<TaskState> emit) async {
@@ -73,6 +76,16 @@ class TaskBloc extends Bloc<TaskEvent, TaskState> {
   void _onAddCommentToTask(AddCommentToTaskEvent event, Emitter<TaskState> emit) async {
     try {
       await addCommentToTask(event.taskId, event.comment);
+      final updatedTasks = await getTasks();
+      emit(TaskLoaded(updatedTasks));
+    } catch (e) {
+      emit(TaskError(e.toString()));
+    }
+  }
+
+  void _onAddTimeLogToTask(AddTimeLogToTaskEvent event, Emitter<TaskState> emit) async {
+    try {
+      await addTimeLogToTask(event.taskId, event.timeLog);
       final updatedTasks = await getTasks();
       emit(TaskLoaded(updatedTasks));
     } catch (e) {

@@ -23,17 +23,18 @@ const String kApplicationDocumentsPath = 'applicationDocumentsPath';
 const String kExternalCachePath = 'externalCachePath';
 const String kExternalStoragePath = 'externalStoragePath';
 
-
 @GenerateMocks([Box])
 void main() async {
   TestWidgetsFlutterBinding.ensureInitialized();
   PathProviderPlatform.instance = MockPathProviderPlatform();
 
-  final appDocDir =  await getTemporaryDirectory();;
+  final appDocDir = await getTemporaryDirectory();
+  ;
 
   // Initialize Hive
   await Hive.initFlutter();
-  await Hive..init(appDocDir.path);
+  await Hive
+    ..init(appDocDir.path);
 
   // Register Hive adapters
   Hive.registerAdapter(TaskAdapter());
@@ -67,6 +68,7 @@ void main() async {
           spentTime: 0,
           isCompleted: false,
           comments: [],
+          timeLogs: [],
         ),
       ];
 
@@ -91,6 +93,7 @@ void main() async {
         spentTime: 0,
         isCompleted: false,
         comments: [],
+        timeLogs: [],
       );
 
       await taskDataSource.addTask(task);
@@ -112,6 +115,7 @@ void main() async {
         spentTime: 0,
         isCompleted: false,
         comments: [],
+        timeLogs: [],
       );
 
       await taskDataSource.updateTask(task);
@@ -128,10 +132,7 @@ void main() async {
     });
 
     test('should add a comment to a task', () async {
-      final comment = Comment(
-          userId: 'user1',
-          content: 'This is a comment',taskId: '1'
-      );
+      final comment = Comment(userId: 'user1', content: 'This is a comment', taskId: '1');
 
       final task = Task(
         id: '1',
@@ -146,6 +147,7 @@ void main() async {
         spentTime: 0,
         isCompleted: false,
         comments: [],
+        timeLogs: [],
       );
 
       when(mockTaskBox.get('1')).thenReturn(task);

@@ -29,14 +29,14 @@ class TaskAdapter extends TypeAdapter<Task> {
       spentTime: fields[9] as int,
       isCompleted: fields[10] as bool,
       comments: (fields[11] as List).cast<Comment>(),
-
+      timeLogs: (fields[12] as List).cast<TimeLog>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, Task obj) {
     writer
-      ..writeByte(12)
+      ..writeByte(13)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -60,7 +60,9 @@ class TaskAdapter extends TypeAdapter<Task> {
       ..writeByte(10)
       ..write(obj.isCompleted)
       ..writeByte(11)
-      ..write(obj.comments);
+      ..write(obj.comments)
+      ..writeByte(12)
+      ..write(obj.timeLogs);
   }
 
   @override

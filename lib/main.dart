@@ -10,6 +10,7 @@ import 'package:task_wave/core/theme/bloc/theme_cubit.dart';
 import 'package:task_wave/core/util/services/notification_service.dart';
 import 'package:task_wave/features/kanban_board/data/models/comment.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
+import 'package:task_wave/features/kanban_board/data/models/time_log.dart';
 import 'package:task_wave/features/kanban_board/data/models/user.dart';
 import 'package:task_wave/features/kanban_board/presentation/pages/task/bloc/task_bloc.dart';
 import 'package:task_wave/features/kanban_board/presentation/pages/task/bloc/task_event.dart';
@@ -22,6 +23,7 @@ Future<void> main() async {
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(TaskAdapter());
   Hive.registerAdapter(CommentAdapter());
+  Hive.registerAdapter(TimeLogAdapter());
   await AppCenter.start(secret: "c54ebafe-45dd-482d-99d8-edbcd88dbc78");
   await AppCenter.enable();
   await Hive.openBox<Task>('tasks');

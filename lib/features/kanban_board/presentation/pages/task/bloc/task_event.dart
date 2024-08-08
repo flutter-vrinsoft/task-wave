@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:task_wave/features/kanban_board/data/models/comment.dart';
 import 'package:task_wave/features/kanban_board/data/models/task.dart';
+import 'package:task_wave/features/kanban_board/data/models/time_log.dart';
 
 abstract class TaskEvent extends Equatable {
   @override
@@ -45,4 +46,14 @@ class AddCommentToTaskEvent extends TaskEvent {
 
   @override
   List<Object> get props => [taskId, comment];
+}
+
+class AddTimeLogToTaskEvent extends TaskEvent {
+  final String taskId;
+  final TimeLog timeLog;
+
+  AddTimeLogToTaskEvent(this.taskId, this.timeLog);
+
+  @override
+  List<Object> get props => [taskId, timeLog];
 }
