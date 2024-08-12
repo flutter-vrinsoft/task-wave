@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:size_config/size_config.dart';
 import 'package:task_wave/core/theme/app_sizes.dart';
 import 'package:task_wave/core/theme/app_theme.dart';
@@ -12,6 +13,7 @@ import 'package:task_wave/features/kanban_board/presentation/widgets/clock_widge
 import 'package:task_wave/features/kanban_board/presentation/widgets/horizontal_task_view.dart';
 import 'package:task_wave/features/kanban_board/presentation/widgets/pie_chart_widget.dart';
 import 'package:task_wave/features/kanban_board/presentation/widgets/welcome_widget.dart';
+import 'package:upgrader/upgrader.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -40,6 +42,34 @@ class _HomeScreenState extends State<HomeScreen> {
               _showColorPickerDialog(context);
             },
             icon: Icon(Icons.format_paint),
+          ),
+        ),
+        trailing: SizedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // CircleAvatar(
+              //   backgroundColor: context.onInverseSurface,
+              //   child: IconButton(
+              //     onPressed: () async {
+              //       await _showRateUsDialog(context);
+              //     },
+              //     icon: Icon(Icons.star, color: Colors.yellow),
+              //   ),
+              // ),
+              // context.hGap10,
+              // CircleAvatar(
+              //   backgroundColor: context.onInverseSurface,
+              //   child: IconButton(
+              //     onPressed: () async {
+              //       await _showUpdateDialog(context);
+              //     },
+              //     icon: Icon(Icons.update, color: context.primary),
+              //   ),
+              // ),
+            ],
           ),
         ),
       ),
@@ -112,4 +142,28 @@ void _showColorPickerDialog(BuildContext context) {
       );
     },
   );
+}
+
+Future<void> _showRateUsDialog(BuildContext context) async {
+  // final InAppReview _inAppReview = InAppReview.instance;
+  // if (await _inAppReview.isAvailable()) {
+  //   _inAppReview.requestReview();
+  // } else {
+  //   // Fallback for platforms that do not support in-app review
+  //   _inAppReview.openStoreListing(appStoreId: 'YOUR_APP_STORE_ID', microsoftStoreId: 'YOUR_MICROSOFT_STORE_ID');
+  // }
+}
+
+Future<void> _showUpdateDialog(BuildContext context) async {
+  Upgrader.clearSavedSettings();
+
+  // return showDialog(
+  //   context: context,
+  //   builder: (BuildContext context) {
+  //     return UpgradeAlert(
+  //       barrierDismissible: true,
+  //       dialogStyle: UpgradeDialogStyle.material, // Use Material design for the dialog
+  //     );
+  //   },
+  // );
 }
